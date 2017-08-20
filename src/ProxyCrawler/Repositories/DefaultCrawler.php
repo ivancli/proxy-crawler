@@ -14,7 +14,7 @@ use IvanCLI\ProxyCrawler\Contracts\CrawlerContract;
 abstract class DefaultCrawler implements CrawlerContract
 {
     protected $url;
-    protected $ips = [];
+    protected $proxies = [];
     protected $content;
     protected $status;
     protected $headers = [
@@ -24,44 +24,19 @@ abstract class DefaultCrawler implements CrawlerContract
         'Cache-Control: no-cache',
     ];
 
-    const PROXY_URL = 'http://www.freeproxylists.net/au.html';
-
     public function __construct()
     {
-        $this->setURL(self::PROXY_URL);
         $this->crawl();
         $this->fetch();
     }
 
     /**
-     * set target URL
-     * @param $url
-     * @return void
-     */
-    public function setURL($url)
-    {
-        $this->url = $url;
-    }
-
-    /**
-     * Crawl web page content from given proxy provider
-     * @return mixed
-     */
-    abstract public function crawl();
-
-    /**
-     * Load content
-     * @return void
-     */
-    abstract public function fetch();
-
-    /**
      * Get loaded IPs
      * @return mixed
      */
-    public function getIps()
+    public function getProxies()
     {
-        return $this->ips;
+        return $this->proxies;
     }
 
     /**
@@ -71,16 +46,6 @@ abstract class DefaultCrawler implements CrawlerContract
     public function getStatus()
     {
         return $this->status;
-    }
-
-    /**
-     * Update IPs property
-     * @param $ips
-     * @return void
-     */
-    public function setIps($ips)
-    {
-        $this->ips = $ips;
     }
 
     /**

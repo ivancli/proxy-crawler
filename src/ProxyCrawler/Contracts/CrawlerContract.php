@@ -14,13 +14,6 @@ use Ixudra\Curl\Facades\Curl;
 interface CrawlerContract
 {
     /**
-     * set target URL
-     * @param $url
-     * @return mixed
-     */
-    public function setURL($url);
-
-    /**
      * Crawl web page content from given proxy provider
      * @return mixed
      */
@@ -33,23 +26,16 @@ interface CrawlerContract
     public function fetch();
 
     /**
-     * Get loaded IPs
+     * Get loaded Proxies
      * @return mixed
      */
-    public function getIps();
+    public function getProxies();
 
     /**
      * Get request status code
      * @return mixed
      */
     public function getStatus();
-
-    /**
-     * Update IPs property
-     * @param $ips
-     * @return void
-     */
-    public function setIps($ips);
 
     /**
      * Update status property

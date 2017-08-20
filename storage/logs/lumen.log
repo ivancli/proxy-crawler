@@ -1,0 +1,15 @@
+[2017-08-19 11:18:40] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: IvanCLI\Tests\Feature\FreeProxyTest::IvanCLI\Tests\Feature\{closure}(): Failed opening required '/home/vagrant/Code/proxy-crawler/tests/Feature/../routes/web.php' (include_path='.:/usr/share/php') in /home/vagrant/Code/proxy-crawler/tests/Feature/FreeProxyTest.php:35
+Stack trace:
+#0 /home/vagrant/Code/proxy-crawler/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
+[2017-08-20 12:33:53] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Class IvanCLI\ProxyCrawler\Repositories\FreeProxy contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (IvanCLI\ProxyCrawler\Contracts\CrawlerContract::setURL) in /home/vagrant/Code/proxy-crawler/src/ProxyCrawler/Repositories/FreeProxy.php:15
+Stack trace:
+#0 /home/vagrant/Code/proxy-crawler/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
+[2017-08-20 12:44:15] lumen.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Class IvanCLI\ProxyCrawler\Repositories\FreeProxy contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (IvanCLI\ProxyCrawler\Contracts\CrawlerContract::setURL) in /home/vagrant/Code/proxy-crawler/src/ProxyCrawler/Repositories/FreeProxy.php:15
+Stack trace:
+#0 /home/vagrant/Code/proxy-crawler/vendor/laravel/lumen-framework/src/Concerns/RegistersExceptionHandlers.php(54): Laravel\Lumen\Application->handleShutdown()
+#1 [internal function]: Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}()
+#2 {main}  
