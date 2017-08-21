@@ -28,6 +28,7 @@ abstract class DefaultCrawler implements CrawlerContract
     {
         $this->crawl();
         $this->fetch();
+        $this->test();
     }
 
     /**
@@ -57,4 +58,11 @@ abstract class DefaultCrawler implements CrawlerContract
     {
         $this->status = $status;
     }
+
+    /**
+     * test crawled proxy ips
+     * @return mixed
+     */
+    abstract public function test();
+
 }

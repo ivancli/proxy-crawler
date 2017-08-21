@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Ivan
- * Date: 12/08/2017
- * Time: 11:56 PM
+ * Date: 21/08/2017
+ * Time: 10:26 PM
  */
 
 namespace IvanCLI\ProxyCrawler\Repositories;
@@ -12,14 +12,15 @@ namespace IvanCLI\ProxyCrawler\Repositories;
 use Ixudra\Curl\Facades\Curl;
 use Symfony\Component\DomCrawler\Crawler;
 
-class IdCloak extends DefaultCrawler
+class XRoxy extends DefaultCrawler
 {
-    protected $url = 'http://www.idcloak.com/proxylist/australia-proxy-list.html';
+    protected $url = 'http://www.xroxy.com/proxylist.php?port=&type=&ssl=&country=AU&sort=ip';
 
-    const ROW_XPATH = '//*[@class="proxy_table"]//tr[descendant::td[text()="High"]]';
+    const ROW_XPATH = '//tr[descendant::td[descendant::a[@title="View this Proxy details"]]]';
 
-    const PORT_XPATH = '//td[last()-1]';
-    const IP_XPATH = '//td[last()]';
+    const IP_XPATH = '//td//a[@title="View this Proxy details"]';
+
+    const PORT_XPATH = '//td//a[contains(@title, "Select proxies with port number")]';
 
     const WAIT_TIMEOUT = 3;
 
@@ -45,7 +46,7 @@ class IdCloak extends DefaultCrawler
 
     /**
      * Load content
-     * @return void
+     * @return mixed
      */
     public function fetch()
     {
