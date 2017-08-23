@@ -3,11 +3,11 @@
     "description": "This package is used for crawling IP addresses from various webpages",
     "type": "library",
     "require": {
-        "laravel/lumen": "5.4",
         "ixudra/curl": "^6.12",
         "symfony/dom-crawler": "^3.3"
     },
     "require-dev": {
+        "laravel/lumen": "5.4",
         "phpunit/phpunit": "^6.3"
     },
     "license": "MIT",
