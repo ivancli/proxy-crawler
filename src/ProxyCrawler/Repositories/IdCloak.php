@@ -84,7 +84,7 @@ class IdCloak extends DefaultCrawler
     public function test()
     {
         foreach ($this->proxies as $index => $proxy) {
-            if (@fsockopen($proxy->ip, $proxy->port, $errCode, $errStr, self::WAIT_TIMEOUT) !== false) {
+            if (@fsockopen($proxy->ip, $proxy->port, $errCode, $errStr, self::WAIT_TIMEOUT) === false) {
                 $this->proxies = array_splice($this->proxies, $index, 1);
             }
         }
